@@ -1,0 +1,2 @@
+- hosts: dhcp-server
+  user: root
