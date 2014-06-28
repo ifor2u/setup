@@ -1,4 +1,9 @@
 #!/bin/sh
+if [[ "$ISOBASEDIR" == "" ]]
+then
+    echo "not set ISOBASEDIR"
+    exit 1
+fi
 ssh root@dhcp-server hostname
 rc=$?
 if [[ "$rc" != "0" ]]
@@ -12,3 +17,5 @@ if [[ "Disabled" != "$result" ]]
 then
     ssh root@dhcp-server reboot
 fi
+
+hdiutil mount ${ISOBASEDIR}/rhel-server-6.5-x86_64-dvd.iso 

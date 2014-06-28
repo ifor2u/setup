@@ -1,0 +1,5 @@
+[rhel65]
+name=RedHat Enterprise Linux 6 - $basearch
+baseurl=file:///media
+enabled=1
+gpgcheck=0
