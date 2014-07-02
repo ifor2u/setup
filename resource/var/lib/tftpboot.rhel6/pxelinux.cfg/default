@@ -3,9 +3,9 @@ default syslinux/menu.c32
 timeout 10
 
 label rhel65
-  kernel vmlinuz
-  append ks=http://192.168.137.131/rhel65/ks.cfg load initrd=initrd.img devfs=nomount
+  kernel images/pxeboot/vmlinuz
+  append ks=http://{{ dhcp_server_ip }}/rhel65/ks.cfg load initrd=images/pxeboot/initrd.img devfs=nomount
 
 label rhel510
-  kernel vmlinuz
-  append ks=http://192.168.136.131/rhel510/ks.cfg load initrd=initrd.img devfs=nomount
+  kernel images/pxeboot/vmlinuz
+  append ks=http://{{ dhcp_server_ip }}/rhel510/ks.cfg load initrd=images/pxeboot/initrd.img devfs=nomount
