@@ -1,5 +1,7 @@
 - hosts: dhcp-server
   user: root
+  vars:
+    dhcp_server_ip: 192.168.137.131
   tasks:
   - mount: name=/media src=/dev/cdrom fstype=iso9660 state=mounted
   - copy: src=resource/etc/yum.repos.d/rhel.repo dest=/etc/yum.repos.d/rhel.repo
