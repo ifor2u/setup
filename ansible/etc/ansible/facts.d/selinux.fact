@@ -1,0 +1,19 @@
+#!/bin/env python
+import sys
+import json
+import subprocess
+
+cmd = "cat /etc/selinux/config|grep -v ^#|grep -v ^$"
+
+p = subprocess.Popen(cmd, shell=True, stdin=subprocess.PIPE, stdout=subprocess.PIPE,stderr=subprocess.STDOUT, close_fds=True)
+(stdouterr, stdin) = (p.stdout, p.stdin)
+
+list = {}
+while True:
+  line = stdouterr.readline()
+  if not line:
+    break
+  tokens = line.rstrip().split("=")
+  list[tokens[0]] = tokens[1]
+
+print json.dumps(list)
