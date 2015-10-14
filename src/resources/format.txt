@@ -9,3 +9,5 @@ ntpclient:
 kernel_parameter:
 netconsole:
 kdump:
+sshclient:
+sshserver:
