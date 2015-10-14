@@ -2,3 +2,4 @@ directory:path,owner,group,mode
 user:name,group,groups,shell,home
 group:name,gid
 cron:user,trigger,job
+chkconfig:name,state,runlevel
