@@ -7,3 +7,5 @@ nfsclient:
 nfsserver:
 ntpclient:
 kernel_parameter:
+netconsole:
+kdump:
